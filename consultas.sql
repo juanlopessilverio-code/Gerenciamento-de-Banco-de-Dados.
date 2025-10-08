@@ -131,4 +131,30 @@ LEFT JOIN
 
 ORDER BY
     Nome_Pessoa;
+
 --A consulta mostra uma única lista abrangente que contém as associações de todos os Clientes E todos os Mecânicos--
+
+SELECT
+    SUBSTR(VM.brand, 1, 3) AS 'Marca_Curta',
+    UPPER(VM.model) AS 'Modelo_Veiculo_MAIUSCULO',
+
+    SUM(T.price) AS 'Receita_Total',
+ 
+    ROUND(AVG(T.price), 2) AS 'Media_Ticket_Arredondada',
+
+    COUNT(T.id) AS 'Num_Tickets'
+
+FROM
+    VehicleModel VM
+JOIN
+    Vehicle V ON VM.id = V.vehiclemodel_id
+JOIN
+    Ticket T ON V.id = T.vehicle_id
+GROUP BY
+    1, 2 
+HAVING
+    AVG(T.price) > 100
+ORDER BY
+    Receita_Total DESC;
+
+ --Extrair os três primeiros caracteres da marca do veículo e padronizar o modelo para letras maiúsculas, Calcular a receita total e o número de tickets por modelo de veículo e arredondar a média de preço dos tickets para duas casas decimais--

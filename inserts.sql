@@ -41,7 +41,6 @@ insert into Workshop(name, address) values
 ("DaMoto Carro", "Rua Cajueiro do Norte, 302 - Bairro Nova Vida, Teixeira de Freitas - BA, 45990-000");
 
 
-
 insert into Client(name) values
 
 ("Maria das Gracas Souza Lima"),
@@ -83,7 +82,6 @@ insert into Client(name) values
 ("Marluce Andrade Correia"),
 
 ("Valdinei Nascimento Lima");
-
 
 
 insert into Mechanic(name) values
@@ -129,7 +127,6 @@ insert into Mechanic(name) values
 ("Patrícia Nascimento Vieira");
 
 
-
 insert into VehicleModel(brand, model, year) values
 
 ("Fiat", "Argo", 2022),
@@ -171,7 +168,6 @@ insert into VehicleModel(brand, model, year) values
 ("Fiat", "Fastback", 2024),
 
 ("Volkswagen", "Nivus", 2024);
-
 
 
 insert into Vehicle(odometer, vehiclemodel_id) values
@@ -217,7 +213,6 @@ insert into Vehicle(odometer, vehiclemodel_id) values
 (286600, 5);
 
 
-
 insert into SparePart(name, used) values
 
 ("Amortecedor", 1),
@@ -259,7 +254,6 @@ insert into SparePart(name, used) values
 ("Braco axial", 1),
 
 ("Coxim do motor", 2);
-
 
 
 insert into PartProvider(name) values
@@ -305,7 +299,6 @@ insert into PartProvider(name) values
 ("Auto Center Tradicão");
 
 
-
 insert into Ticket(price, workshop_id, client_id, vehicle_id) values
 
 (78.28, 15, 16, 1),
@@ -347,7 +340,6 @@ insert into Ticket(price, workshop_id, client_id, vehicle_id) values
 (154.18, 2, 19, 3),
 
 (162.26, 15, 3, 13);
-
 
 
 insert into SparePart_Buy(amount, sparepart_id, partprovider_id, ticket_id) values

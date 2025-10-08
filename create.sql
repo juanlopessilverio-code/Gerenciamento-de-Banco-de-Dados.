@@ -94,7 +94,6 @@ create table Client_Vehicle(
     vehicle_id int,
     foreign key (client_id) references Client(id),
     foreign key (vehicle_id) references Vehicle(id)
-
 );
 
 create table Mechanic_Vehicle(
@@ -103,7 +102,6 @@ create table Mechanic_Vehicle(
     vehicle_id int,
     foreign key (mechanic_id) references Mechanic(id),
     foreign key (vehicle_id) references Vehicle(id)
-
 );
 
 create table VehicleModel_SparePart(
@@ -112,7 +110,6 @@ create table VehicleModel_SparePart(
     sparepart_id int,
     foreign key (vehiclemodel_id) references VehicleModel(id),
     foreign key (sparepart_id) references SparePart(id)
-
 );
 
 create table SparePart_PartProvider(
@@ -122,5 +119,4 @@ create table SparePart_PartProvider(
     price real,
     foreign key (sparepart_id) references SparePart(id),
     foreign key (partprovider_id) references PartProvider(id)
-
 );

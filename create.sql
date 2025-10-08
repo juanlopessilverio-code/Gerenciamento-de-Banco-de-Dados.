@@ -2,16 +2,12 @@ drop table if exists
 Workshop, Client, Mechanic, VehicleModel, Vehicle, SparePart, PartProvider, Ticket, SparePart_Buy,
 Workshop_Client, Workshop_Mechanic, Client_Vehicle, Mechanic_Vehicle, VehicleModel_SparePart, SparePart_PartProvider;
 
-
 create table Workshop(
-
+  
     id int primary key auto_increment,
     name varchar(32),
     address varchar(98)
-
 );
-
-
 
 create table Client(
 
@@ -19,36 +15,26 @@ create table Client(
     name varchar(32)
 );
 
-
-
 create table Mechanic(
     id int primary key auto_increment,
     name varchar (32)
 );
 
-
-
-
-
 create table VehicleModel(
 
    id int primary key auto_increment,    
    brand varchar(20),
-    model varchar(32),
-    year int
+   model varchar(32),
+   year int
 );
 
-
-
 create table Vehicle(
-
+  
     id int primary key auto_increment,    
     odometer int,
     vehiclemodel_id int,
     foreign key (vehiclemodel_id) references VehicleModel(id)
 );
-
-
 
 create table SparePart(
 
@@ -57,15 +43,11 @@ create table SparePart(
     used enum('No', 'Yes')
 );
 
-
-
 create table PartProvider(
+  
     id int primary key auto_increment,
     name varchar(32)
-
 );
-
-
 
 create table Ticket(
 
@@ -77,10 +59,7 @@ create table Ticket(
     foreign key (workshop_id) references Workshop(id),
     foreign key (client_id) references Client(id),
     foreign key (vehicle_id) references Vehicle(id)
-
 );
-
-
 
 create table SparePart_Buy(
 
@@ -91,7 +70,6 @@ create table SparePart_Buy(
     foreign key (sparepart_id) references SparePart(id),
     foreign key (partprovider_id) references PartProvider(id),
     foreign key (ticket_id) references Ticket(id)
-
 );
 
 create table Workshop_Client(
@@ -102,8 +80,6 @@ create table Workshop_Client(
     foreign key (client_id) references Client(id)
 );
 
-
-
 create table Workshop_Mechanic(
 
     workshop_id int,
@@ -111,8 +87,6 @@ create table Workshop_Mechanic(
     foreign key (workshop_id) references Workshop(id),
     foreign key (mechanic_id) references Mechanic(id)
 );
-
-
 
 create table Client_Vehicle(
 
@@ -123,8 +97,6 @@ create table Client_Vehicle(
 
 );
 
-
-
 create table Mechanic_Vehicle(
 
     mechanic_id int,
@@ -134,8 +106,6 @@ create table Mechanic_Vehicle(
 
 );
 
-
-
 create table VehicleModel_SparePart(
 
     vehiclemodel_id int,
@@ -144,8 +114,6 @@ create table VehicleModel_SparePart(
     foreign key (sparepart_id) references SparePart(id)
 
 );
-
-
 
 create table SparePart_PartProvider(
 
